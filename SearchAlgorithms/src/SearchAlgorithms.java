@@ -33,11 +33,28 @@ public class SearchAlgorithms {
 		return -1;
 	}
 	
-	public static int binSearch(int[] nums)
+	public static int binSearch(int[] nums, int query)
 	{
 		int l = 0;
 		int r = nums.length - 1;
 		
-		
+		while(l <= r)
+		{
+			int mid = l + (r - l)/2;
+			
+			if(nums[mid] == query)
+			{
+				return mid;
+			}
+			else if(nums[mid] >= query)
+			{
+				mid = mid * 2;
+			}
+			else if(nums[mid] <= query)
+			{
+				mid = mid/2;
+			}
+		}
+		return -1;
 	}
 }
