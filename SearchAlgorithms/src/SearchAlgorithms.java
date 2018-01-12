@@ -40,19 +40,19 @@ public class SearchAlgorithms {
 		
 		while(l <= r)
 		{
-			int mid = l + (r - l)/2;
+			int mid = l + (r - l) / 2;
 			
 			if(nums[mid] == query)
 			{
 				return mid;
 			}
-			else if(nums[mid] >= query)
+			else if(nums[mid] > query)
 			{
-				mid = mid * 2;
+				l = mid + 1;
 			}
 			else if(nums[mid] <= query)
 			{
-				mid = mid/2;
+				r = mid - 1;
 			}
 		}
 		return -1;
